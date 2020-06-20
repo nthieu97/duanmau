@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAA;EACZ,QAAQ,EAAE,QAAQ;CAOrB;;AARD,AAEI,gBAFY,CAEZ,yBAAyB,CAAA;EACrB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;CAEZ",
+    "sources": [
+        "banner-cate.scss"
+    ],
+    "names": [],
+    "file": "banner-cate.css"
+}

@@ -1,0 +1,10 @@
+#category-banner {
+  position: relative;
+}
+
+#category-banner .category-banner__content {
+  position: absolute;
+  top: 49%;
+  left: 49%;
+}
+/*# sourceMappingURL=banner-cate.css.map */
