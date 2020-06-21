@@ -2,6 +2,7 @@
 session_start();
 require_once "libs/categories.php";
 require_once 'libs/user.php';
+require_once 'libs/slider.php';
 require_once "libs/products.php";
 require_once "./config/config.php";
 require_once 'libs/comment.php';

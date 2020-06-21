@@ -1,5 +1,5 @@
 <?php
-define('ROOT', 'http://localhost/pt15211-web-duanmau-master/');
+define('ROOT', 'http://localhost/duanmau/');
  
 function check_session(){
     if(isset($_SESSION['user'])){

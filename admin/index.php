@@ -65,6 +65,18 @@ switch ($page) {
         unset($_SESSION['user']);header('Location:'.ROOT.'admin/login.php');
         die;
     break;
+    case 'slider':
+        $action = isset($_GET['action'])?$_GET['action']:'';
+        switch($action){
+            case'':
+                include_once './slider/index.php';
+            break;
+            case 'add':
+                include_once './slider/create.php';
+            case 'edit':
+                include_once './slider/edit.php';
+        }
+    break;
     default:
         echo "404";
         break;
