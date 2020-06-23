@@ -17,10 +17,14 @@ switch ($page) {
         $view_page = "layout/category.php";
         break;
     case 'products':
-        $id = $_GET['id'];
-        $product=list_one_product($id);
-        $title=$product['name'];
-        $view_page ="layout/product.php";
+        $action = isset($_GET['action'])?$_GET['action']:'';
+        switch($action){
+            case '':
+                $view_page = "layout/product.php";
+            break;
+            case 'search':
+                $view_page = "layout/search.php";
+        }
         break;
     case'logout':
             unset($_SESSION['user']);

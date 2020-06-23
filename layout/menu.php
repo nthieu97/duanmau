@@ -18,7 +18,7 @@
           </li>
           <?php endforeach;?>
         </ul>
-  <form class="form-inline" method="POST" action="layout/search.php">
+  <form class="form-inline" method="POST" action="<?=ROOT?>?page=products&action=search">
     <input class="form-control mr-sm-2 " type="search" name="keyword" placeholder="Search" aria-label="Search">
     <button class="btn my-2 my-sm-0 color-primary-bg text-white" type="submit" >Search</button>
   </form>
