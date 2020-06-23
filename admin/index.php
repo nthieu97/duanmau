@@ -6,6 +6,8 @@ session_start();
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 require_once '../config/config.php';
 require_once '../libs/products.php';
+require_once '../libs/comment.php';
+require_once '../libs/slider.php';
 include_once './template/header.php';
 check_role();
 
@@ -45,6 +47,9 @@ switch ($page) {
             case 'search':
                 include_once './products/search.php';
             break;
+            case 'see_comment':
+                include_once './products/see_comment.php';
+            break;
         }
     break;
     case 'users':
@@ -59,6 +64,7 @@ switch ($page) {
             break;
             case 'edit':
                 include_once './users/edit.php';
+            break;
         }
     break;
     case 'logout':

@@ -12,7 +12,7 @@ session_start();
             $image='';
         }
         $password = password_hash($password,PASSWORD_DEFAULT);
-        insert_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address);
+        insert_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$active);
         if($okUpload){
             move_uploaded_file($_FILES['image']['tmp_name'],'../../images/'.$image);
         }

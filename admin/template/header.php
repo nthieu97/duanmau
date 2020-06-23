@@ -48,7 +48,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?=ROOT?>admin">
         <i class="far fa-newspaper"></i>
-          <span>bảng tin</span></a>
+          <span>Dash board</span></a>
       </li>
 
       <!-- Divider -->

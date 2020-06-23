@@ -48,6 +48,12 @@ $user = list_one_user($id);
                     Có<input type="radio" name="role" value="1" id="" <?php echo $user['role'] == 1 ? 'checked' : ''  ?>>
                 </div>
                 <div class="form-group">
+                    <label for="">Khóa người dùng &nbsp;</label>
+                    Không<input type="radio" name="active" value="1" id="" <?php echo $user['active'] == 1 ? 'checked' : ''  ?>>
+                    Có<input type="radio" name="active" value="0" id="" <?php echo $user['active'] == 0 ? 'checked' : ''  ?>>
+                </div>
+                
+                <div class="form-group">
                     <label for="">Hình ảnh</label>
                     <?php if ($user['image'] != '') : ?>
                         <img src="../images/<?= $user['image'] ?>" width="120" alt="">

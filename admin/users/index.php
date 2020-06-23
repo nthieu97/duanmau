@@ -49,7 +49,7 @@ $user = list_all_users();
                             <th>Email</th>
                             <th>Username</th>
                             <th>Image</th>
-                            
+                            <th>Active</th>
                             <th>Role</th>
                             <th>Address</th>
                             <th></th>
@@ -65,6 +65,7 @@ $user = list_all_users();
                             <th>Email</th>
                             <th>Username</th>
                             <th>Image</th>
+                            <th>Active</th>
                             <th>Role</th>
                             <th>Address</th>
                             <th></th>
@@ -81,6 +82,7 @@ $user = list_all_users();
                             <td><?=$u['email']?></td>
                             <td><?=$u['username']?></td>
                             <td><img src="../images/<?=$u['image']?>" width="120px" alt=""></td>
+                            <td><?php echo $u['active']==1 ? 'Đẫ kích hoạt':'Bị khóa'?></td>
                             <td><?php echo $u['role']==1?'Admin':'Thành viên'?></td>
                             <td><?=$u['address']?></td>
                             <td>

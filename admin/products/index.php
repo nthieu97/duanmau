@@ -87,6 +87,7 @@ $pro = list_all_product();
                             <td>
                                 <a href="<?=ROOT?>admin/?page=products&action=edit&id=<?=$p['id']?>" class="btn btn-success" >Sửa</a>
                                 <a href="<?=ROOT?>admin/?page=products&id=<?=$p['id']?>" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" class="btn btn-danger" >Xóa</a>
+                                <a class="btn btn-info" href="<?=ROOT?>admin/?page=products&action=see_comment&id_product=<?=$p['id']?>">Xem bình luận của sản phẩm này</a>
                             </td>
                         </tr>
                         <?php endforeach;?>

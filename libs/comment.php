@@ -24,4 +24,8 @@
     function delete_comment($id){
         return delete('comments','id',$id);
     }
+    function comment_product($id){
+        $sql = "SELECT c.id as comment_id,content,user_id FROM comments c inner join products p on c.product_id = p.id WHERE p.id ='$id'";
+        return query($sql);
+    }
 ?>

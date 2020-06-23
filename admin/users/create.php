@@ -44,6 +44,7 @@ require_once '../libs/user.php';
                     Không<input type="radio" name="role" value="0" id="" checked>
                     Có<input type="radio" name="role" value="1" id="">
                 </div>
+                <input type="hidden" name="active" value="1">
                 <div class="form-group">
                 <label for="">Hình ảnh</label>
                 <div class="input-group mb-3">

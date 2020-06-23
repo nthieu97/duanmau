@@ -22,7 +22,7 @@
         return listOne('users','id',$id);
     }
     //them mot dong
-    function insert_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address){
+    function insert_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$active){
         $created_at= date("y-m-d");
         $data=[
             'fullname'=>$fullname,
@@ -31,6 +31,7 @@
             'image' => $image,
             'username'=>$username,
             'password'=>$password,
+            'active' =>$active,
             'role'=>$role,
             'gender'=>$gender,
             'address'=>$address,
@@ -39,7 +40,7 @@
         return insert('users',$data);
     }
     //sua noi dung
-    function update_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$id){
+    function update_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$id,$active){
         $data = [
             'fullname'=>$fullname,
             'email'=>$email,
@@ -47,6 +48,7 @@
             'image' => $image,
             'username'=>$username,
             'password'=>$password,
+            'active'=>$active,
             'role'=>$role,
             'gender'=>$gender,
             'address'=>$address,
@@ -71,3 +73,15 @@
         }
         return $result;
     }
+function disable_user($id){
+    $sql= "UPDATE user Set active =0 where id = $id";
+    $conn = connection();
+    $stmt = $conn->prepare($sql);
+    $stmt ->execute();
+}
+function enable_user($id){
+    $sql= "UPDATE user Set active =1 where id = $id";
+    $conn = connection();
+    $stmt = $conn->prepare($sql);
+    $stmt ->execute();
+}

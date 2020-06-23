@@ -85,4 +85,5 @@ function update_views_by_product_id($id){
     $stmt = $conn->prepare($sql);
     $stmt ->execute();
 }
+
 ?>
