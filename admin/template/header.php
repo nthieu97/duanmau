@@ -63,14 +63,16 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-file-alt"></i>
-          <span>Bài viết</span>
+          <span>Danh mục thành phần</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Quản trị bài viết:</h6>
+            <h6 class="collapse-header">Quản trị thành phần:</h6>
             <a class="collapse-item" href="<?=ROOT?>admin/?page=products"> Sản phẩm</a>
             <a class="collapse-item" href="<?=ROOT?>admin/?page=categories">Danh mục</a>
             <a class="collapse-item" href="<?=ROOT?>admin/?page=users">Thành viên</a>
+            <a class="collapse-item" href="<?=ROOT?>admin/?page=slider">Slide</a>
+            <a class="collapse-item" href="<?=ROOT?>admin/?page=comment">comment</a>
           </div>
         </div>
       </li>
