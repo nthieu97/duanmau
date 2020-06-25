@@ -94,6 +94,23 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-6">
+  <h3 class=" font-weight-bold text-black text-uppercase mb-1">Thống kê sản phẩm</h3>
+<div class="row">
+
+  <div id="piechart_3d" style="width: 800px; height: 500px;"></div>   
+</div>
+  </div>
+  <div class="col-sm-6">
+  <h3 class=" font-weight-bold text-black text-uppercase mb-1">Sản phẩm có nhiều bình luận nhất</h3>
+<div class="row">
+
+<div id="chart_div" style="width: 800px; height: 500px;"></div>   
+</div>
+  </div>
+</div>
+
 
 
 </div>

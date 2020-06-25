@@ -1,5 +1,8 @@
-
-
+<?php
+  require_once'../libs/thongke.php';
+  $chart = count_product_cate();
+  $comm = pro_comment_max();
+?>
 </div>
       <!-- End of Main Content -->
 
@@ -42,6 +45,54 @@
       </div>
     </div>
   </div>
+  <!-- san pham co nhieu comment nhat -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Tên sản phẩm', 'Số lượt comment'],
+          <?php
+            foreach ($comm as $com){
+              echo "['$com[tensanpham]',  '$com[socomment]']";
+            };
+          ?>
+
+          ]);
+
+        var options = {
+          title: 'Lengths of dinosaurs, in meters',
+          legend: { position: 'none' },
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  <!-- GOogle_chart_js -->
+        <script type="text/javascript">
+          google.charts.load("current", {packages:["corechart"]});
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Loại', 'Số Lượng'],
+                <?php
+                foreach ($chart as $c){
+                    echo "['$c[name]',     $c[soluong]],";
+                }
+                ?>
+            ]);
+
+            var options = {
+              title: 'TỶ LỆ HÀNG HÓA',
+              is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+          }
+        </script>
 
   <!-- Bootstrap core JavaScript-->
   <script src="resource/vendor/jquery/jquery.min.js"></script>

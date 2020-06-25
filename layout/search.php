@@ -30,3 +30,6 @@
         </div>
       </div>
     </section>
+    <?php
+      include_once 'new-phone.php';
+    ?>

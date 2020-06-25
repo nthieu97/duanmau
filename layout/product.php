@@ -4,6 +4,7 @@
     $pr=list_one_product($id);
     update_views_by_product_id($id);
     $product = products_with_cate($id);
+    $cate_id=$pr['cate_id'];
     if (isset($_POST['btn_comment'])) {
         extract($_REQUEST);
         $product_id = $id;
@@ -199,3 +200,6 @@
       </div>
   </section>
   <!-- !product -->
+  <?php
+    include_once 'related_product.php';
+  ?>

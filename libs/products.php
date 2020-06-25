@@ -85,5 +85,8 @@ function update_views_by_product_id($id){
     $stmt = $conn->prepare($sql);
     $stmt ->execute();
 }
-
+function related_product($cate_id){
+    $sql = "SELECT * FROM products where cate_id = $cate_id";
+    return query($sql);
+}
 ?>
