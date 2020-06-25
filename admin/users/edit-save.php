@@ -12,7 +12,7 @@
         {
             $image=$hinh;
         }
-        $password = password_hash($password,PASSWORD_DEFAULT);
+        
         update_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$id,$active);
         $_SESSION['message']="Sửa dữ liệu thành công";
         header('Location:'.ROOT.'admin/?page=users');

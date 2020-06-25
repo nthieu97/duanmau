@@ -1,3 +1,28 @@
+<?php
+session_start();
+  require_once '../config/config.php';
+  require_once '../libs/user.php';
+    if(isset($_POST['btn_register'])){
+      extract($_REQUEST);
+      
+      if(check_username($username)){
+        $error['username']="Tài khoản đã tồn tại. Hãy chọn tên tài khoản khác";
+      }else if($password != $password_repeat){
+          $error['password']="Mật khẩu không trùng nhau";
+        }else{
+          $password = $password_repeat;
+          $image = '';
+          $password = password_hash($password,PASSWORD_DEFAULT);
+          insert_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$active);
+          $user = check_user($username);
+          $_SESSION['user']=$user;
+          header('Location:'.ROOT.'/admin/login.php');
+        }
+     
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,12 +59,22 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form class="user">
+              <form class="user" method="POST" action="">
                 <div class="form-group">
                     <input type="text" name="fullname" class="form-control form-control-user"  placeholder="Full Name" required>
                 </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                      <label for="">Nam</label>
+                    <input type="radio" name="gender" value="1"  required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="">Nữ</label>
+                    <input type="radio" name="gender"  value="0"  required>
+                    </div>
+                </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" placeholder="Email Address" required>
+                  <input type="email" name="email" class="form-control form-control-user" placeholder="Email Address" required>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -48,21 +83,27 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" name="address" class="form-control form-control-user" placeholder="Address" id="" required>
                     </div>
-                    
                 </div>
                 <div class="form-group">
                     <input type="text" name="username" class="form-control-user form-control" placeholder="UserName.." id="" required>
+                    <label for="" class="text-danger">
+                        <?=isset($error['username'])?$error['username']:''?>
+                      </label>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user"  placeholder="Password" required>
+                    <input type="password" name="password"  class="form-control form-control-user"  placeholder="Password" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user"  placeholder="Repeat Password" required>
+                    <input type="password" name="password_repeat" class="form-control form-control-user"  placeholder="Repeat Password" required>
+                    <label for="" class="text-danger">
+                        <?=isset($error['password'])?$error['password']:''?>
+                      </label>
                   </div>
                 </div>
-               
-                <button type="submit" class=" btn btn-primary btn-block btn-lg rounded-pill">Đăng kí tài khoản</button>
+                <input type="hidden" name="role" value="0">
+                <input type="hidden" value="1" name="active">
+                <button type="submit" name="btn_register" class=" btn btn-primary btn-block btn-lg rounded-pill">Đăng kí tài khoản</button>
               </form>
               <hr>
               <div class="text-center">

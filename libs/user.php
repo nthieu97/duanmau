@@ -6,6 +6,13 @@
         }
         return false;
     }
+    function check_username($username){
+        $sql ="SELECT * FROM users WHERE username = '$username'";
+        $user = query($sql);
+        if(count($user)>0){
+            return true;
+        }
+    }
     function check_user($username){
         $sql ="SELECT * FROM users WHERE username = '$username'";
         $user = query($sql);
@@ -40,14 +47,13 @@
         return insert('users',$data);
     }
     //sua noi dung
-    function update_user($fullname,$email,$phone,$username,$password,$image,$role,$gender,$address,$id,$active){
+    function update_user($fullname,$email,$phone,$username,$image,$role,$gender,$address,$id,$active){
         $data = [
             'fullname'=>$fullname,
             'email'=>$email,
             'phone' => $phone,
             'image' => $image,
             'username'=>$username,
-            'password'=>$password,
             'active'=>$active,
             'role'=>$role,
             'gender'=>$gender,

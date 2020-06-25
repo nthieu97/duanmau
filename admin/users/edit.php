@@ -39,10 +39,6 @@ $user = list_one_user($id);
                     <input type="text" name="username" class="form-control" value="<?= $user['username'] ?>" placeholder="Nhập tên đăng nhập" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Mật khẩu</label>
-                    <input type="password" name="password" class="form-control" value="<?= $user['password'] ?>" placeholder="Nhap mật khẩu" required>
-                </div>
-                <div class="form-group">
                     <label for="">Là quyền admin? &nbsp;</label>
                     Không<input type="radio" name="role" value="0" id="" <?php echo $user['role'] == 0 ? 'checked' : ''  ?>>
                     Có<input type="radio" name="role" value="1" id="" <?php echo $user['role'] == 1 ? 'checked' : ''  ?>>
