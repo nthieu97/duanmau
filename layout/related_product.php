@@ -10,15 +10,15 @@
            <!-- owl-carousel -->
            <div class="owl-carousel owl-theme ">
             <?php foreach($related_product as $r):?>
-            <div class="item py-2 h-100 bg-white">
+            <div class="item bg-white ">
               <div class="product font-rale ">
                 <a href="<?=ROOT?>?page=products&id=<?=$r['id']?>"><img src="<?=ROOT?>images/<?=$r['image']?>" alt="product1" class="img-fluid"></a>
                 <div class="text-center">
-                  <h6 class="mt-5"><?=$r['name']?></h6>
+                  <h6 class="mt-5 p-1 " style="height: 60px;"><?=$r['name']?></h6>
                   <div class="price py-2 ">
                     <span>$<?=$r['price']?></span>
                   </div>
-                  <a href="http://localhost/duanmau/?page=products&amp;id=21" class=" btn btn-block btn-warning">Details</a>
+                  <a href="http://localhost/duanmau/?page=products&id=<?=$r['id']?>" class=" btn btn-block btn-warning">Details</a>
                 </div>
               </div>
             </div>

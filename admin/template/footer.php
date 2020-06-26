@@ -45,31 +45,8 @@
       </div>
     </div>
   </div>
-  <!-- san pham co nhieu comment nhat -->
+  
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tên sản phẩm', 'Số lượt comment'],
-          <?php
-            foreach ($comm as $com){
-              echo "['$com[tensanpham]',  '$com[socomment]']";
-            };
-          ?>
-
-          ]);
-
-        var options = {
-          title: 'Lengths of dinosaurs, in meters',
-          legend: { position: 'none' },
-        };
-
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
   <!-- GOogle_chart_js -->
         <script type="text/javascript">
           google.charts.load("current", {packages:["corechart"]});
