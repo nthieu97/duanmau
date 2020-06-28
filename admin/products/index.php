@@ -1,6 +1,6 @@
 <?php
 
-require_once 'libs/products.php';
+require_once '../libs/products.php';
 if(isset($_GET['id'])){
     $id =$_GET['id'];
     delete_products($id);
